@@ -1,5 +1,5 @@
-// calculator.c
 #include <stdio.h>
+#include <math.h>  // Added
 
 int main() {
     double a, b;
@@ -8,7 +8,7 @@ int main() {
     printf("Enter first number: ");
     scanf("%lf", &a);
 
-    printf("Enter operator (+, -, *, /): ");
+    printf("Enter operator (+, -, *, /, ^): ");  // Updated prompt
     scanf(" %c", &op);
 
     printf("Enter second number: ");
@@ -22,6 +22,7 @@ int main() {
             if (b != 0) printf("Result: %.2lf\n", a / b);
             else printf("Error: Division by zero\n");
             break;
+        case '^': printf("Result: %.2lf\n", pow(a, b)); break;  // New case
         default: printf("Invalid operator\n");
     }
 
